@@ -1,0 +1,65 @@
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+    <%= f.label :training_date %><br />
+    <%= f.text_field :training_date, :value => @booking.training_date.strftime("%d-%m-%Y") %>
+  </div>
+  <div class="field">
+    <%= f.label :reseller_id %><br />
+    <%= f.number_field :reseller_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.number_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_name %><br />
+    <%= f.text_field :contact_name %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_email %><br />
+    <%= f.text_field :contact_email %>
+  </div>
+  <div class="field">
+    <%= f.label :training_type %><br />
+    <%= f.text_field :training_type %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br />
+    <%= f.select :length, options_for_select(%w[Half\ Day Full\ Day 2\ Days 3\ Days]) %>
+  </div>
+  <div class="field">
+    <%= f.label :quote_id %><br />
+    <%= f.text_field :quote_id %>
+  </div>
+  <div class="field">
+    <%= f.label :purchase_order %><br />
+    <%= f.text_field :purchase_order %>
+  </div>
+  <div class="field">
+    <%= f.label :training_confirmed %><br />
+    <%= f.check_box :training_confirmed %>
+  </div>
+  <div class="field">
+    <%= f.label :invoice_sent %><br />
+    <%= f.check_box :invoice_sent %>
+  </div>
+  <div class="field">
+    <%= f.label :training_approved %><br />
+    <%= f.check_box :training_approved %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<h1>Listing bookings</h1>
+
+<table>
+  <tr>
+    <th>Training date</th>
+    <th>Contact name</th>
+    <th>Contact email</th>
+    <th>Training type</th>
+    <th>Length</th>
+    <th>Training confirmed</th>
+    <th>Invoice sent</th>
+    <th>Training approved</th>
+  </tr>
+
+<% @bookings.each do |booking| %>
+  <tr>
+    <td><%= link_to booking.training_date.strftime("%d-%m-%Y"), booking %></td>
+    <td><%= booking.contact_name %></td>
+    <td><%= booking.contact_email %></td>
+    <td><%= booking.training_type %></td>
+    <td><%= booking.length %></td>
+    <td><%= booking.training_confirmed %></td>
+    <td><%= booking.invoice_sent %></td>
+    <td><%= booking.training_approved %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booking', new_booking_path %>

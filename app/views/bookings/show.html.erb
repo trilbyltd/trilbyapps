@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Reseller:</b>
+  <%= @booking.reseller_id %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @booking.customer_id %>
+</p>
+
+<p>
+  <b>Contact name:</b>
+  <%= @booking.contact_name %>
+</p>
+
+<p>
+  <b>Contact email:</b>
+  <%= @booking.contact_email %>
+</p>
+
+<p>
+  <b>Training date:</b>
+  <%= @booking.training_date %>
+</p>
+
+<p>
+  <b>Training type:</b>
+  <%= @booking.training_type %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%= @booking.length %>
+</p>
+
+<p>
+  <b>Quote:</b>
+  <%= @booking.quote_id %>
+</p>
+
+<p>
+  <b>Purchase order:</b>
+  <%= @booking.purchase_order %>
+</p>
+
+<p>
+  <b>Training confirmed:</b>
+  <%= @booking.training_confirmed %>
+</p>
+
+<p>
+  <b>Invoice sent:</b>
+  <%= @booking.invoice_sent %>
+</p>
+
+<p>
+  <b>Training approved:</b>
+  <%= @booking.training_approved %>
+</p>
+
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>
