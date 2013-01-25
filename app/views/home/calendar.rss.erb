@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+PRODID:-//trilbyapps//NONSGML v1.0//EN
+<% for @bookings.each do |booking| %>
+	BEGIN:VEVENT
+	UID:<%= booking_url @booking.id %>
+	URL:<%= booking_url @booking.id %>
+	DTSTART:<%= @booking.training_date.strftime("%Y%m%dT%H%M00") %>
+	DTEND:<%= @booking.training_date.strftime("%Y%m%dT") %><%= @booking.training_date %>
+	SUMMARY:<%= @performance.training_type %>
+	LOCATION:<%= @performance.client_name %>
+	DESCRIPTION:via Trilbyapps
+	END:VEVENT
+<% end %>
+END:VCALENDAR

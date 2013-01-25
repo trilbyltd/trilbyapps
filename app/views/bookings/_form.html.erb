@@ -13,7 +13,7 @@
 
 <div class="field">
     <%= f.label :training_date %><br />
-    <%= f.text_field :training_date, :value => @booking.training_date.strftime("%d-%m-%Y") %>
+    <%= f.text_field :training_date %> #, :value => @booking.training_date.strftime("%d-%m-%Y"), :id => "datepicker" %>
   </div>
   <div class="field">
     <%= f.label :reseller_id %><br />
