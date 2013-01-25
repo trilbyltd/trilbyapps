@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      #format.ics { render :text => @bookings.to_ics, :content_type => Mime::Type.lookup("text/calendar") }
+      # format.ics { render :text => @bookings.to_ics, :mime_type => Mime::Type.lookup("text/calendar") }
       format.json { render json: @bookings }
     end
   end
@@ -15,6 +15,12 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.ics do
+        calendar = Icalendar::Calendar.new
+        calendar.add_event(@booking.to_ics)
+        calendar.publish
+        render :text => calendar.to_ical
+      end
       format.json { render json: @booking }
     end
   end
@@ -70,5 +76,6 @@ class BookingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
 end

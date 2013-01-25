@@ -60,6 +60,8 @@
   <%= @booking.training_approved %>
 </p>
 
+<%= link_to "Add to iCal", :controller => 'bookings', :action => :show, :format => :ics %>
+
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>
