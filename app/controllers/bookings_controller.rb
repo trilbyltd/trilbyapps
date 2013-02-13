@@ -1,19 +1,7 @@
 class BookingsController < ApplicationController
 
-
-  def create_reseller
-    Reseller.create
-  end
-
   def index
-    @filters = Booking::FILTERS
-    if params[:show] && @filters.collect{|f| f[:scope]}.include?(params[:show])
-      @bookings = Booking.send(params[:show])
-    else
-      @bookings = Booking.all
-    end  
-
-    # @bookings = Booking.all
+    @bookings = Booking.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,8 +10,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def archive
+    @bookings = Booking.all
+
+    respond_to do |format|
+      format.html # archive.html.erb
+      format.json { render json: @bookings }
+    end
+  end
+
   def show
     @booking = Booking.find(params[:id])
+    @reseller = Reseller.find(@booking.reseller_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,7 +37,9 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-
+    @booking.training_confirmed = false
+    @booking.invoice_sent = false
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @booking }
@@ -56,10 +56,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(params[:booking])
-
+    
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        format.html { redirect_to bookings_url, notice: 'Booking was successfully created.' }
         format.json { render json: @booking, status: :created, location: @booking }
       else
         format.html { render action: "new" }
@@ -87,7 +87,7 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     respond_to do |format|
-      format.html { redirect_to bookings_url }
+      format.html { redirect_to bookings_url, notice: 'Booking deleted.' }
       format.json { head :no_content }
     end
   end

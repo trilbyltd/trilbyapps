@@ -1,5 +1,8 @@
 Trilbyapps::Application.routes.draw do
 
+  match 'bookings/archive' => 'bookings#archive'
+  match 'bookings/calendar' => 'bookings#calendar'
+  
   resources :home
   resources :bookings
   resources :resellers

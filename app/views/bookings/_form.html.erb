@@ -10,65 +10,44 @@
       </ul>
     </div>
   <% end %>
+<div id="form_view">
+  <div class="form_labels">
+        <p><%= f.label :training_date %><br />
+        <p><%= f.label :reseller_id %><br />
+        <p><%= f.label :customer_id %><br />
+        <p><%= f.label :contact_name %><br />
+        <p><%= f.label :contact_email %><br />
+        <p><%= f.label :training_type %><br />
+        <p><%= f.label :length %><br />
+        <p><%= f.label :quote_id %><br />
+        <p><%= f.label :purchase_order %><br />
+        <p><%= f.label :training_approved %><br />
+  </div><!-- form_labels -->
 
-<div class="field">
-    <%= f.label :training_date %><br />
-    <%= f.text_field :training_date, :class => 'datepicker', :value => (@booking.training_date.blank? ? '' : @booking.training_date.strftime("%d %B %Y") ) %>
-  </div>
-  <div class="field">
-    <%= f.label :reseller_id %><br />
-    <%= f.collection_select(:reseller_id, Reseller.all, :id, :name ) %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_id %><br />
-    <%= f.number_field :customer_id %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_name %><br />
-    <%= f.text_field :contact_name %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_email %><br />
-    <%= f.text_field :contact_email %>
-  </div>
-  <div class="field">
-    <%= f.label :training_type %><br />
-    <%= f.text_field :training_type %>
-  </div>
-  <div class="field">
-    <%= f.label :length %><br />
-    <%= f.select :length, options_for_select(%w[Half\ Day Full\ Day 2\ Days 3\ Days]) %>
-  </div>
-  <div class="field">
-    <%= f.label :quote_id %><br />
-    <%= f.text_field :quote_id %>
-  </div>
-  <div class="field">
-    <%= f.label :purchase_order %><br />
-    <%= f.text_field :purchase_order %>
-  </div>
-  <div class="field">
-    <%= f.label :training_approved %><br />
-    <%= f.check_box :training_approved %>
-  </div>
-
-  <% if @booking.training_approved? %>
-      <div class="field">
-      <%= f.label :training_confirmed %><br />
-      <%= f.check_box :training_confirmed %>
+  <div class="form_fields">
+    <p><%= f.text_field :training_date, :class => 'datepicker', :value => (@booking.training_date.blank? ? '' : @booking.training_date.strftime("%d %B %Y") ) %>
+    <p><%= f.collection_select(:reseller_id, Reseller.all, :id, :name ) %>
+    <p><%= f.number_field :customer_id %>
+    <p><%= f.text_field :contact_name %>
+    <p><%= f.text_field :contact_email %>
+    <p><%= f.text_field :training_type %>
+    <p><%= f.select :length, options_for_select(%w[Half\ Day Full\ Day 2\ Days 3\ Days]) %>
+    <p><%= f.text_field :quote_id %>
+    <p><%= f.text_field :purchase_order %>
+    <p><%= f.check_box :training_approved %>
+    <p><% if @booking.training_approved? %>
+        <%= f.check_box :training_confirmed %>
+       <% end %>
+    <p><% if @booking.training_confirmed %>
+        <% if @completed = true %>
+          <%= f.check_box :invoice_sent %>
+      <% end %>
+    <% end %>
+    <div class="actions">
+      <%= f.submit %>
     </div>
-<% end %>
+  </div><!-- form_fields -->
+    
+</div><!-- form_view -->
 
-<% if @booking.training_confirmed %>
-  <% if @completed = true %>
-    <div class="field">
-      <%= f.label :invoice_sent %><br />
-      <%= f.check_box :invoice_sent %>
-    </div>
-  <% end %>
-<% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

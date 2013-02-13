@@ -10,11 +10,15 @@ th {
 	font-size:14pt;
 }
 
-table, th {
-	border:1px black solid;
+table td{font-size: 10pt;}
+table {border-collapse:collapse;}
+table, th, td{
+	border:1px solid black;
 	padding:2px;
 	font-size:12pt;
 }
+td.section_title {font-size:26pt;}
+
 th.booking_invoice_sent {
 	width:50px;
 	text-align: center;
@@ -24,10 +28,57 @@ th.booking_approved {
 	width:50px;
 	text-align: center;
 }
+
 th.booking_confirmed {
 	width:50px;
 	text-align: center;
 }
+
 .checkbox {
 	text-align: center;
+}
+
+#booking_view, #form_view {
+	float:left;
+	width:500px;
+	background-color: lightblue;
+	margin:15px;
+	padding:0 0 0 3px;
+}
+
+#show_labels, .form_labels {
+	float:left;
+	width:250px;
+}
+
+.form_labels label {
+	margin-bottom:10px;
+	float:left;
+	width:250px;
+}
+
+.form { 
+	float:left;
+	display:block;
+	width:100%;
+}
+.form_fields {
+	float:left;
+	width:250px;
+	background-color: lightgrey;
+}
+#show_fields {
+	float:left;
+	width:250px;
+	background-color: lightgrey;
+}
+#show_fields p {
+	height:18px;
+}
+.form_fields p {
+	height:18px;
+}
+#edit_controls {
+	width:500px;
+	float:none;
 }

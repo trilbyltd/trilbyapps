@@ -1,67 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Reseller:</b>
-  <%= @booking.reseller_id %>
-</p>
+<div id="booking_view">
+    <div id="show_labels">
+      <p><b>Reseller:</b></p>
+      <p><b>Customer:</b></p>
+      <p><b>Contact name:</b></p>
+      <p><b>Contact email:</b></p>
+      <p><b>Training date:</b></p>
+      <p><b>Training type:</b></p>
+      <p><b>Length:</b></p>
+      <p><b>Quote:</b></p>
+      <p><b>Purchase order:</b></p>
+      <p><b>Training approved:</b></p>
+      <p><b>Training confirmed:</b></p>
+      <p><b>Invoice sent:</b></p>
+    </div>
+    <div id="show_fields">
+      <p><%= @reseller.name %></p>
+      <p><%= @booking.customer_id %></p>
+      <p><%= @booking.contact_name %></p>
+      <p><%= @booking.contact_email %></p>
+      <p><%= @booking.training_date.strftime("%d %B %Y") %></p>
+      <p><%= @booking.training_type %></p>
+      <p><%= @booking.length %></p>
+      <p><%= @booking.quote_id %></p>
+      <p><%= @booking.purchase_order %></p>
+      <p><% if @booking.training_approved  == true %>
+            <%= image_tag("tick.png", :alt => "Approved", :width => "20px") %>
+        <% else %>
+            <%= image_tag("cross.png", :alt => "Not Approved", :width => "20px") %>
+        <% end %></p>
+      <p><% if @booking.training_confirmed  == true %>
+            <%= image_tag("tick.png", :alt => "Confirmed", :width => "20px") %>
+        <% else %>
+            <%= image_tag("cross.png", :alt => "Not Confirmed", :width => "20px") %>
+        <% end %></p>
+      <p><% if @booking.invoice_sent  == true %>
+            <%= image_tag("tick.png", :alt => "Invoiced", :width => "20px") %>
+        <% else %>
+            <%= image_tag("cross.png", :alt => "Not Invoiced", :width => "20px") %>
+        <% end %></p>
+    </div>
+</div>
 
-<p>
-  <b>Customer:</b>
-  <%= @booking.customer_id %>
-</p>
-
-<p>
-  <b>Contact name:</b>
-  <%= @booking.contact_name %>
-</p>
-
-<p>
-  <b>Contact email:</b>
-  <%= @booking.contact_email %>
-</p>
-
-<p>
-  <b>Training date:</b>
-  <%= @booking.training_date.strftime("%d %B %Y") %>
-</p>
-
-<p>
-  <b>Training type:</b>
-  <%= @booking.training_type %>
-</p>
-
-<p>
-  <b>Length:</b>
-  <%= @booking.length %>
-</p>
-
-<p>
-  <b>Quote:</b>
-  <%= @booking.quote_id %>
-</p>
-
-<p>
-  <b>Purchase order:</b>
-  <%= @booking.purchase_order %>
-</p>
-
-<p>
-  <b>Training confirmed:</b>
-  <%= @booking.training_confirmed %>
-</p>
-
-<p>
-  <b>Invoice sent:</b>
-  <%= @booking.invoice_sent %>
-</p>
-
-<p>
-  <b>Training approved:</b>
-  <%= @booking.training_approved %>
-</p>
-
-<%= link_to "Add to iCal", :controller => 'bookings', :action => :show, :format => :ics %>
-
-
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+  <div id="edit_controls">
+    <%= link_to "Add to iCal", :controller => 'bookings', :action => :show, :format => :ics %> |
+    <%= link_to 'Edit', edit_booking_path(@booking) %> |
+    <%= link_to 'Destroy', @booking, method: :delete, data: { confirm: 'Are you sure you want to delete this booking?' } %> |
+    <%= link_to 'Back', bookings_path %>
+</div>

@@ -1,7 +1,7 @@
-<h1>Listing bookings</h1>
+<h1>All bookings</h1>
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Booking', new_booking_path %>
+<%= link_to '&harr; Back to current bookings', booking_path %>
 
 <h2>All Bookings</h2>
 <table class="booking_index">
@@ -15,10 +15,10 @@
     <th class="booking_confirmed">Training confirmed</th>    
     <th class="booking_invoice_sent">Invoice sent</th>
   </tr>
-<tr class "section_title">
+<tr>
     <td>All</td>
 </tr>
-<% @bookings.not_invoice_ready.each do |booking| %>
+<% @bookings.each do |booking| %>
   <tr>
     <td><%= link_to booking.training_date.strftime("%d-%m-%Y"), booking %></td>
     <td><%= booking.contact_name %></td>
@@ -49,43 +49,5 @@
     <tr>    
 </tr>
 <% end %>
-
-<tr>
-    <td>Ready to Invoice</td>
-</tr>
-<% @bookings.invoice_ready.not_sent.each do |booking| %>
-  <tr>
-    <td><%= link_to booking.training_date.strftime("%d-%m-%Y"), booking %></td>
-    <td><%= booking.contact_name %></td>
-    <td><%= booking.contact_email %></td>
-    <td><%= booking.training_type %></td>
-    <td><%= booking.length %></td>
-    <td class="checkbox">
-        <% if booking.training_approved  == true %>
-            <%= image_tag("tick.png", :alt => "Approved", :width => "20px") %>
-        <% else %>
-            <%= image_tag("cross.png", :alt => "Not Approved", :width => "20px") %>
-        <% end %>
-    </td>
-    <td class="checkbox">
-        <% if booking.training_confirmed  == true %>
-            <%= image_tag("tick.png", :alt => "Confirmed", :width => "20px") %>
-        <% else %>
-            <%= image_tag("cross.png", :alt => "Not Confirmed", :width => "20px") %>
-        <% end %>
-    </td>
-    <td class="checkbox">
-        <% if booking.invoice_sent  == true %>
-            <%= image_tag("tick.png", :alt => "Invoiced", :width => "20px") %>
-        <% else %>
-            <%= image_tag("cross.png", :alt => "Not Invoiced", :width => "20px") %>
-        <% end %>
-    </td>
-    
-  </tr>
-<% end %>
-
 </tr>
 </table>
-<br>
-<%= link_to "Bookings Archive", bookings_archive_path %>
