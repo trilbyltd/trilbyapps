@@ -1,18 +1,16 @@
 <h1>Listing resellers</h1>
 
+<p id="notice"><%= notice %></p>
+
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @resellers.each do |reseller| %>
   <tr>
-    <td><%= reseller.name %></td>
-    <td><%= link_to 'Show', reseller %></td>
-    <td><%= link_to 'Edit', edit_reseller_path(reseller) %></td>
+    <td><%= link_to reseller.name, edit_reseller_path(reseller) %></td>
     <td><%= link_to 'Destroy', reseller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -21,3 +19,5 @@
 <br />
 
 <%= link_to 'New Reseller', new_reseller_path %>
+<br>
+<%= link_to '< Back', root_path %>

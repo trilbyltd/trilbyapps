@@ -2,6 +2,7 @@ Trilbyapps::Application.routes.draw do
 
   resources :home
   resources :bookings
+  resources :resellers
   
   root :to => "home#index"
   

@@ -44,8 +44,8 @@ class ResellersController < ApplicationController
 
     respond_to do |format|
       if @reseller.save
-        format.html { redirect_to @reseller, notice: 'Reseller was successfully created.' }
-        format.json { render json: @reseller, status: :created, location: @reseller }
+        format.html { redirect_to resellers_url, notice: 'Reseller was successfully created.' }
+        #format.json { render json: @reseller, status: :created, location: @reseller }
       else
         format.html { render action: "new" }
         format.json { render json: @reseller.errors, status: :unprocessable_entity }
@@ -60,7 +60,7 @@ class ResellersController < ApplicationController
 
     respond_to do |format|
       if @reseller.update_attributes(params[:reseller])
-        format.html { redirect_to @reseller, notice: 'Reseller was successfully updated.' }
+        format.html { redirect_to resellers_url, notice: 'Reseller was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

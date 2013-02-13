@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1 { font-size: 18pt;}
-
+h2 { font-size: 16pt;}
 th {
 	width:180px;
 	text-align: left;
@@ -14,4 +14,20 @@ table, th {
 	border:1px black solid;
 	padding:2px;
 	font-size:12pt;
+}
+th.booking_invoice_sent {
+	width:50px;
+	text-align: center;
+}
+
+th.booking_approved {
+	width:50px;
+	text-align: center;
+}
+th.booking_confirmed {
+	width:50px;
+	text-align: center;
+}
+.checkbox {
+	text-align: center;
 }

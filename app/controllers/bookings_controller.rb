@@ -1,7 +1,19 @@
 class BookingsController < ApplicationController
 
+
+  def create_reseller
+    Reseller.create
+  end
+
   def index
-    @bookings = Booking.all
+    @filters = Booking::FILTERS
+    if params[:show] && @filters.collect{|f| f[:scope]}.include?(params[:show])
+      @bookings = Booking.send(params[:show])
+    else
+      @bookings = Booking.all
+    end  
+
+    # @bookings = Booking.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -36,6 +48,9 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    if Time.now.to_i - @booking.training_date.to_i > 0
+        @completed = false
+      end
   end
 
 
