@@ -94,10 +94,10 @@ header #main_menu ul li a {
   width:80%;
   min-width:640px;
   max-width:1024px;
-  padding-left:10%;
-  padding-right:10%;
-  padding-top:5%;
-  padding-bottom:5%;
+  padding-left:6%;
+  padding-right:6%;
+  padding-top:5px;
+  padding-bottom:5px;
 }
 
 #notice {
@@ -138,4 +138,24 @@ header #main_menu ul li a {
   padding: 2px;
   background-color: red;
   display: table;
+}
+
+.form_view {
+  float:left;
+  width:500px;
+  background-color: lightblue;
+  margin:15px;
+  padding:0 0 0 3px;
+  display:block;
+}
+
+.form_labels {
+  float:left;
+  width:250px;
+}
+
+.form_fields {
+  float:left;
+  width:250px;
+  background-color: lightgrey;
 }

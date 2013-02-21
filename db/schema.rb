@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207170910) do
+ActiveRecord::Schema.define(:version => 20130215155941) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "reseller_id"
@@ -30,27 +30,25 @@ ActiveRecord::Schema.define(:version => 20130207170910) do
     t.datetime "updated_at",         :null => false
   end
 
+  create_table "courses", :force => true do |t|
+    t.string   "title"
+    t.text     "audience"
+    t.text     "description"
+    t.text     "learning_outcomes"
+    t.text     "equipment"
+    t.decimal  "enduser_cost"
+    t.decimal  "contract_cost"
+    t.decimal  "length"
+    t.string   "location"
+    t.string   "category"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "resellers", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "trainings", :force => true do |t|
-    t.integer  "reseller_id"
-    t.integer  "customer_id"
-    t.string   "contact_name"
-    t.string   "contact_email"
-    t.datetime "training_date"
-    t.string   "training_type"
-    t.decimal  "length"
-    t.integer  "quote_id"
-    t.string   "purchase_order"
-    t.boolean  "training_confirmed"
-    t.boolean  "invoice_sent"
-    t.boolean  "training_approved"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
   end
 
 end

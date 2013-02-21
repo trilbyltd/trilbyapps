@@ -1,0 +1,23 @@
+<div id="web_course_view">
+	<h2><%= @course.title %></h3>
+	<h3>Audience</h3>
+	<p class="course_fields"><%= @course.audience %>
+
+	<h3>Description</h3>
+	<p class="course_fields"><%= @course.description %><br>
+
+	<h3>Learning Outcomes</h3>
+	<p class="course_fields"><%= @course.learning_outcomes %><br>
+
+	<h3>Equipment</h3>
+	<p class="course_fields"><%= @course.equipment %><br>
+
+	<h3>Cost</h3>
+	<p class="course_fields">£<%= @course.enduser_cost %><br>
+
+	<h3>Length</h3>
+	<p class="course_fields"><%= @course.length %><br>
+
+	<%=	@course.location %><br>
+	<p class="updated">Last Updated: <%= @course.updated_at.strftime("%B %Y") %></p>
+</div><!-- web_course_view -->

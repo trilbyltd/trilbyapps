@@ -16,5 +16,11 @@
 //= require_tree .
 
 $(function(){
-  $('.datepicker').datepicker({dateFormat: "dd M yy"});
+$('.datepicker').datepicker({dateFormat: "dd M yy"});
+//  $('.textarea').autoResize();
+$('.reseller_list .twitter-typeahead').typeahead({
+	name: 'resellers',
+	remote: 'http://trilbyapps.dev/resellers.json'
+});
+
 });

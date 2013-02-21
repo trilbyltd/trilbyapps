@@ -1,0 +1,119 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea {
+	outline:none;
+	resize:none;
+	min-width: 300px;
+	width:90%;
+	padding:5px;
+	border:3px solid #cccccc;
+}
+#courses_form_view {
+	float:left;
+	width:750px;
+	background-color: lightblue;
+	margin:15px;
+	padding:0 0 0 3px;
+}
+#courses_form_labels {
+	width:300px;
+}
+#courses_form_fields {
+	float:left;
+	width:450px;
+	background-color: lightgrey;
+}
+#courses_form_labels p{
+	height:auto;
+	min-height:60px;
+}
+#courses_form_fields p {
+	height:auto;
+	min-height:60px;
+}
+.title {
+	height:30px;
+}
+.audience textarea{
+	height:60px;
+}
+.description textarea{
+	height:100px;
+}
+.outcomes textarea{
+	height:100px;
+}
+.equipment textarea {
+	height:100px;
+}
+.endcost {
+
+}
+.contractcost {
+
+}
+.location {
+
+}
+.category {
+
+}
+
+// Web/App Formatting
+#web_course_view  {
+	float:none;
+	width:600px;
+	margin-top:60px;
+}
+.course_fields {
+	font-family:helvetica;
+	font-size: 16px;
+	color: #000;
+	background-color: #FFF;
+	margin: 5px;
+	padding: 0px;
+}
+#web_course_view h2 {
+	font-size: 31px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 30px;
+	margin-top: 2px;
+}
+#web_course_view h3 {
+	font-size: 21px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 10px;
+	margin-top: 2px;
+}
+#web_course, p {
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 20px;
+	margin-top: 2px;
+	font-size: 16px;
+}
+#web_course_view ul {
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 20px;
+	margin-top: 2px;
+}
+#web_course_view li{
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 10px;
+	margin-top: 2px;
+	list-style-type: disc;
+	list-style-position: outside;
+	margin-left: 20px;
+}
+.updated {
+	font-size: 10px;
+	font-style: italic;
+}

@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'icalendar'
 gem 'event-calendar', :require => 'event_calendar'
 gem 'table_builder'#, :git => 'git://github.com/p8/table_builder.git'
+gem 'rabl' # for custom JSON
+gem 'oj'
 
 # Gems used only for assets and not required
 # in production environments by default.

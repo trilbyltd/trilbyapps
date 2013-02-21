@@ -1,0 +1,3 @@
+object @reseller
+
+attributes :name

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  audience: MyText
+  description: MyText
+  learning_outcomes: MyText
+  equipment: MyText
+  enduser_cost: 9.99
+  contract_cost: 9.99
+  length: 9.99
+  location: MyString
+  category: MyString
+
+two:
+  title: MyString
+  audience: MyText
+  description: MyText
+  learning_outcomes: MyText
+  equipment: MyText
+  enduser_cost: 9.99
+  contract_cost: 9.99
+  length: 9.99
+  location: MyString
+  category: MyString

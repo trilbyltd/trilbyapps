@@ -1,0 +1,45 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form_view" id="courses_form_view">
+  <div class="form_labels" id="courses_form_labels">
+        <p><%= f.label :title, :class => [:form_label, :title] %><br />
+        <p><%= f.label :audience, :class => [:audience, :form_label] %><br />
+        <p><%= f.label :description, :class => [:description, :form_label] %><br />
+        <p><%= f.label :learning_outcomes, :class => [:outcomes, :form_label] %><br />
+        <p><%= f.label :equipment, :class => [:equipment, :form_label] %><br />
+        <p><%= f.label :enduser_cost %><br />
+        <p><%= f.label :contract_cost %><br />
+        <p><%= f.label :location %><br />
+        <p><%= f.label :length %><br />
+        <p><%= f.label :category %><br />
+  </div><!-- form_labels -->
+
+  <div class="form_fields" id="courses_form_fields">
+    <p class="title"><%= f.text_field :title %>
+    <p class="audience"><%= f.text_area :audience %>
+    <p class="description"><%= f.text_area :description, :class => [:field_description, :description, :textarea] %>
+    <p class="outcomes"><%= f.text_area :learning_outcomes,:class => [:field_description, :outcomes, :textarea], :placeholder => 'You can use HTML here' %>
+    <p class="equipment"><%= f.text_area :equipment, :class => "field_equipment textarea" %>
+    <p class="endcost">£<%= f.text_field :enduser_cost %>
+    <p class="contractcost">£<%= f.text_field :contract_cost %>
+    <p class="location"><%= f.select :location, options_for_select(%w[On\ Site Training\ Centre]) %>
+    <p class="length">£<%= f.text_field :length %>
+    <p class="category"><%= f.select :category, options_for_select(%w[Intro Creative Technology APD]) %>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div><!-- form_fields -->
+    
+</div><!-- form_view -->
+
+<% end %>

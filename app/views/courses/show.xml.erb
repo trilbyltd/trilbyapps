@@ -1,0 +1,72 @@
+<CourseFullData xmlns="http://public.webservices.bcu.ac.uk/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Id>COURSE_ID</Id>
+	<CourseRef i:nil="true"/>
+	<CourseType>Full Course</CourseType>
+	<CourseAward i:nil="true"/>
+	<Title><%= @course.title %></Title>
+	<Faculty>Trilby Multimedia Limited</Faculty>
+	<School>Trilby</School>
+	<Location>On Location,</Location>
+	<Tariff/>
+	<Duration>Half Day session</Duration>
+	<Fees>&amp;pound;<%= @course.cost %></Fees>
+	<FeesNotes i:nil="true"/>
+	<EnquiryNotes/>
+	<International>true</International>
+	<JanuaryStart>false</JanuaryStart>
+	<ApplyOnline>false</ApplyOnline>
+	<CourseOptionDataList>
+		<CourseOptionData>
+			<Mode>Full Course</Mode>
+			<Award>None</Award>
+			<Duration><%= @course.length %></Duration>
+			<FeeLowerPrice><%= @course.cost %></FeeLowerPrice>
+			<FeeUpperPrice><%= @course.cost %></FeeUpperPrice>
+			<FeePerUnit></FeePerUnit>
+		</CourseOptionData>
+	</CourseOptionDataList>
+	<CourseGroupDataList>
+		<CourseGroupData>
+			<Id>40</Id>
+			<Tag>training-reseller-sub-apple</Tag>
+			<Title>Apple</Title>
+		</CourseGroupData>
+		<CourseGroupData>
+			<Id>60</Id>
+			<Tag>training-reseller-main-<%= @course.catageory %></Tag>
+			<Title><%= @course.category %></Title>
+		</CourseGroupData>
+	</CourseGroupDataList>
+	<DataTagDataList i:nil="true"/>
+	<CourseDateDataList i:nil="true"/>
+	<CourseInfoDataList>
+		<CourseInfoData>
+			<InfoTypeId>1</InfoTypeId>
+			<Title>Audience</Title>
+			<Content>
+				<%= @course.audience.to_xml %>
+			</Content>
+		</CourseInfoData>
+		<CourseInfoData>
+			<InfoTypeId>2</InfoTypeId>
+			<Title>Description</Title>
+			<Content>
+				<%= @course.description.to_xml %>
+			</Content>
+		</CourseInfoData>
+		<CourseInfoData>
+			<InfoTypeId>3</InfoTypeId>
+			<Title>Learning Outcomes</Title>
+			<Content>
+				<%= @course.learning_outcomes.to_xml %>
+			</Content>
+		</CourseInfoData>
+		<CourseInfoData>
+			<InfoTypeId>4</InfoTypeId>
+			<Title>Equipment</Title>
+			<Content>
+				<%= @course.equipment.to_xml %>
+			</Content>
+		</CourseInfoData>
+	</CourseInfoDataList>
+</CourseFullData>

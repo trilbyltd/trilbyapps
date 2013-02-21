@@ -1,12 +1,15 @@
 class ResellersController < ApplicationController
   # GET /resellers
   # GET /resellers.json
+
+respond_to :json
+
   def index
     @resellers = Reseller.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @resellers }
+      format.json #{ render json: @resellers }
     end
   end
 
