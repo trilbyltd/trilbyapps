@@ -1,4 +1,22 @@
 <h2>Courses</h2>
-<% @courses.each do |course| %>
-	<%= link_to course.title, course %><br>
+
+<h2>Intro</h2>
+<% @courses.intro.each do |course| %>
+	<p class="courses_list"><%= link_to course.title, course %>&nbsp;<span class="edit_course"><%= link_to 'Edit', edit_course_path(course) %></span></p>
+<% end %>
+<h2>Creative</h2>
+<% @courses.creative.each do |course| %>
+	<p class="courses_list"><%= link_to course.title, course %>
+<% end %>
+<h2>Technology</h2>
+<% @courses.technology.each do |course| %>
+	<p class="courses_list"><%= link_to course.title, course %>
+<% end %>
+<h2>Vision</h2>
+<% @courses.vision.each do |course| %>
+	<p class="courses_list"><%= link_to course.title, course %>
+<% end %>
+<h2>APD</h2>
+	<% @courses.apd.each do |course| %>
+	<p class="courses_list"><%= link_to course.title, course %>
 <% end %>

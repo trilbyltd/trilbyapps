@@ -5,9 +5,10 @@
 textarea {
 	outline:none;
 	resize:none;
-	min-width: 300px;
+	
 	width:90%;
 	padding:5px;
+	margin-bottom:5px;
 	border:3px solid #cccccc;
 }
 #courses_form_view {
@@ -25,42 +26,56 @@ textarea {
 	width:450px;
 	background-color: lightgrey;
 }
-#courses_form_labels p{
-	height:auto;
-	min-height:60px;
+p#courses_form_labels {
+	min-height:20px;
+	margin-top:5px;
+	margin-bottom:5px;
 }
 #courses_form_fields p {
-	height:auto;
-	min-height:60px;
+	margin-top:5px;
+	margin-bottom:5px;
 }
-.title {
-	height:30px;
+.title, #course_title textarea {
+	height:0px;
 }
-.audience textarea{
+p#course_audience textarea {
 	height:60px;
 }
-.description textarea{
+.description, #course_description, #course_description textarea {
 	height:100px;
 }
-.outcomes textarea{
+.outcomes, #course_outcomes textarea {
 	height:100px;
 }
-.equipment textarea {
+.equipment, .equipment textarea {
 	height:100px;
 }
-.endcost {
-
+.endcost, #course_endcost {
+	height: 30px;
 }
-.contractcost {
-
+.contractcost, #course_contractcost{
+	height: 30px;
 }
-.location {
-
+.location, #course_location {
+	height: 30px;
 }
-.category {
-
+.category, #course_category {
+	height: 30px;
+}
+.edit_course a  {
+	font-size:8pt;
+	font-color:#ddd;
 }
 
+// Show HTML Formats
+p.cost_course_fields{
+	margin:10px;
+	padding:10px 15px;
+	background-color: #ccd;
+	border:1px solid #000;
+	width:85px;
+	height:40px;
+}
 // Web/App Formatting
 #web_course_view  {
 	float:none;
@@ -91,7 +106,7 @@ textarea {
 	margin-bottom: 10px;
 	margin-top: 2px;
 }
-#web_course, p {
+#web_course p {
 	margin: 0px;
 	padding: 0px;
 	margin-bottom: 20px;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215155941) do
+ActiveRecord::Schema.define(:version => 20130224173940) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "reseller_id"
@@ -43,12 +43,49 @@ ActiveRecord::Schema.define(:version => 20130215155941) do
     t.string   "category"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "thumbnail"
+    t.string   "retinathumbnail"
+  end
+
+  create_table "customers", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "resellers", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "trainings", :force => true do |t|
+    t.integer  "reseller_id"
+    t.integer  "customer_id"
+    t.string   "contact_name"
+    t.string   "contact_email"
+    t.datetime "training_date"
+    t.string   "training_type"
+    t.decimal  "length"
+    t.integer  "quote_id"
+    t.string   "purchase_order"
+    t.boolean  "training_confirmed"
+    t.boolean  "invoice_sent"
+    t.boolean  "training_approved"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "details"
+    t.string   "thumbnail"
+    t.string   "retinathumbnail"
+    t.string   "video_file"
+    t.string   "app_url"
+    t.string   "app_thumbnail"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

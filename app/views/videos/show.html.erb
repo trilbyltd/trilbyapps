@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<section>
+<header id="video_item_header">
+	<div id="heading_block">
+		<span class="heading"><%= image_tag @video.thumbnail.to_s, :class => :thumbnail %></span><h3 class="video_title"><%= @video.title %></h3>
+	</div>
+</header>
+
+<div class="video_meta">
+  <p><%= @video.details %></p>
+  <h4 class="video_item_label">Retina Thumbnail:</h4><p><%= @retina %></p>
+
+  <h4 class="video_item_label">Mentioned App:</h4>
+  <% if @video.app_thumbnail? %>
+  	<%= image_tag @video.app_thumbnail.to_s %>
+  <% end %>
+  <p><%= link_to @video.app_url, @video.app_url %></p>
+</div>
+</section>
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

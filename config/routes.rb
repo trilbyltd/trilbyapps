@@ -5,8 +5,10 @@ Trilbyapps::Application.routes.draw do
   
   resources :home
   resources :bookings
-  resources :resellers
   resources :courses
+  resources :resellers
+  resources :customers
+  resources :videos
   
   root :to => "home#index"
   

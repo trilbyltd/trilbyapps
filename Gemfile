@@ -12,6 +12,8 @@ gem 'table_builder'#, :git => 'git://github.com/p8/table_builder.git'
 gem 'rabl' # for custom JSON
 gem 'oj'
 
+gem 'carrierwave'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

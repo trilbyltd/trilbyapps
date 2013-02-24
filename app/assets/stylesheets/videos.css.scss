@@ -1,0 +1,110 @@
+// Place all the styles related to the Videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//  Index
+#video_list {
+	margin-top:30px;
+	border-top:solid 1px #000;
+	border-bottom:solid 1px #000;
+	width:100%;
+}
+.video_list_item {
+	border:solid 1px #000;
+	height:300px;
+	width:300px;
+	margin:16px;
+	background-color: lightblue;
+	float:left;
+}
+.video_list_item img {
+ 	margin:10px;
+ 	float:left;
+}
+.video_list_item a {
+	margin:5px;
+	text-align: left;
+}
+.video_list_item a:hover {
+	background-color:lightgrey;
+}
+.video_list_item p {
+	margin-top: 40px ;
+	margin-bottom: 40px ;
+	text-align: left;
+	padding:8px;
+}
+
+// Form/New/Edit
+#video_form_view {
+	height:400px;
+	width:auto;
+}
+#video_form_labels {
+	margin:10px;
+}
+#video_form_labels label {
+	margin:5px;
+}
+#video_form_fields {
+	width:auto;
+}
+#video_form_fields textarea {
+	width:40px;
+	min-width:40px;
+}
+
+// Show
+#video_item_header {
+	margin-top:30px;
+	height:120px;
+	float:none;
+	width:100%;
+}
+.video_title h3 {
+	margin-top: 12px ;
+	margin-bottom: 12px ;
+	text-align: left;
+	width:400px;
+}
+
+// Generic
+.video_updated {
+	font-size: 10px;
+	font-style: italic;
+}
+
+#heading_block {
+	float:left;
+	width:100%;
+}
+.video_item_label {
+	font-style: bold;
+	width:300px;
+	margin:10px;
+}
+.video_meta {
+	height:auto;
+	margin-top:30px;
+}
+.thumbnail {
+	margin:12px;
+}
+.new_video_list_item p{
+	border:solid 1px #000;
+	height:300px;
+	width:300px;
+	margin:16px;
+	background-color: lightblue;
+	float:left;
+}
+.new_video_plus {
+	background-color: none;
+	font-size:70pt;
+	text-align: center;
+}
+.new_video_plus a:hover {
+	background-color: none;
+	margin:100px;
+	padding:10px;
+}

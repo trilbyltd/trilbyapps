@@ -11,7 +11,7 @@
     </div>
   <% end %>
 <div id="booking_form_view">
-  <div class="form_labels">
+  <div class="form_labels" id="booking_form_labels">
         <p><%= f.label :training_date %><br />
         <p><%= f.label :reseller_id %><br />
         <p><%= f.label :customer_id %><br />
@@ -24,7 +24,7 @@
         <p><%= f.label :training_approved %><br />
   </div><!-- form_labels -->
 
-  <div class="form_fields">
+  <div class="form_fields" id"booking_form_fields">
     <p><%= f.text_field :training_date, :class => 'datepicker', :value => (@booking.training_date.blank? ? '' : @booking.training_date.strftime("%d %B %Y") ) %>
     <div class="reseller_list"><span class="twitter-typeahead"><p><%= f.text_field :reseller_id, :class => [:typeahead, 'tt-query'], :autocomplete => false, :spellcheck => false %></span></div>
     <p><%= f.number_field :customer_id %>

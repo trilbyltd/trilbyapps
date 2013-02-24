@@ -12,7 +12,11 @@ end
 
 def show
 	@course = Course.find(params[:id])
-
+  if @course.length == 1
+    @length = "full day"
+  else
+    @lenght = "half day"
+  end
 	respond_to do |format|
       format.html # show.html.erb
       format.xml { render xml: @course }
@@ -49,6 +53,16 @@ end
 
 def update
 	@course = Course.find(params[:id])
+  
+  respond_to do |format|
+      if @course.update_attributes(params[:course])
+        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @course.errors, status: :unprocessable_entity }
+      end
+    end
 end
 
 def destroy

@@ -1,0 +1,16 @@
+
+<div id="video_list">
+<% @videos.each do |video| %>
+<div class="video_list_item">
+	<img src="<%= video.thumbnail.to_s %>">
+	<p><%= link_to video.title, video %></span></p>
+	<p class=""><%= video.details %></p>
+	<span class="video_updated">Updated: <%= video.updated_at.strftime("%B %y") %></span>
+</div>
+
+<% end %>
+
+	<div class="new_video_list_item">
+		<p><%= link_to "+", new_video_path, :class => :new_video_plus %></p>
+	</div>
+</div>

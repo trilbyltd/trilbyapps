@@ -1,4 +1,4 @@
-<%= form_for(@course) do |f| %>
+<%= form_for @course, :html => {:multipart => true } do |f| %>
   <% if @course.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
@@ -16,11 +16,12 @@
         <p><%= f.label :description, :class => [:description, :form_label] %><br />
         <p><%= f.label :learning_outcomes, :class => [:outcomes, :form_label] %><br />
         <p><%= f.label :equipment, :class => [:equipment, :form_label] %><br />
-        <p><%= f.label :enduser_cost %><br />
-        <p><%= f.label :contract_cost %><br />
-        <p><%= f.label :location %><br />
-        <p><%= f.label :length %><br />
-        <p><%= f.label :category %><br />
+        <p><%= f.label :enduser_cost, :class => [:enducost, :form_label] %><br />
+        <p><%= f.label :contract_cost, :class => [:contractcost, :form_label] %><br />
+        <p><%= f.label :location, :class => [:location, :form_label] %><br />
+        <p><%= f.label :length, :class => [:length, :form_label] %><br />
+        <p><%= f.label :category, :class => [:category, :form_label] %><br />
+        <p><%= f.label :thumbnail, :class => [:thumbnail, :form_label] %><br />
   </div><!-- form_labels -->
 
   <div class="form_fields" id="courses_form_fields">
@@ -34,7 +35,7 @@
     <p class="location"><%= f.select :location, options_for_select(%w[On\ Site Training\ Centre]) %>
     <p class="length">£<%= f.text_field :length %>
     <p class="category"><%= f.select :category, options_for_select(%w[Intro Creative Technology APD]) %>
-    
+    <p class="thumbnail"><%= f.file_field :thumbnail %>
     <div class="actions">
       <%= f.submit %>
     </div>
