@@ -17,4 +17,4 @@
 .DS_Store
 
 config/initializers/local_token.rb
-/.public/uploads/
+/public/uploads
