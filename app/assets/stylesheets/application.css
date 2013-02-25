@@ -50,6 +50,9 @@ div {
     margin-bottom: 10px;
   }
 }
+.actions {
+  width:540px;
+}
 
 header {
   margin-top:10px;
@@ -98,7 +101,13 @@ header #main_menu ul li a {
 #main_menu a {
   padding: 10px 15px;
 }
-
+.menu-item {
+  border-left:1px solid black;
+}
+.menu-item-last {
+  border-left:1px solid black;
+  border-right:1px solid black;
+}
 #workspace {
   display:block;
   width:80%;
@@ -162,9 +171,13 @@ header #main_menu ul li a {
 .form_labels {
   float:left;
   width:250px;
+  min-height:200px;
 }
 .form_fields p {
   margin:5px;
+}
+.form_fields {
+  min-height:200px;
 }
 .form_fields, .form_fields input {
   float:left;
