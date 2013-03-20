@@ -1,0 +1,3 @@
+object @customer
+
+attributes :name
