@@ -3,29 +3,33 @@
 <section class="video_block">
   <header id="video_item_header">
   	<div id="heading_block">
-  		<span class="heading"><%= image_tag @video.thumbnail.to_s, :class => :thumbnail %><h3 class="video_title"><%= @video.title %></h3></span>
+  		<h3 class="video_title"><%= @video.title %></h3>
   	</div>
   </header>
-<div class="video_meta">
-  <p><%= @video.details %></p>
-  <h4 class="video_item_label">Retina Thumbnail:</h4><p><%= @retina %></p>
+  <section id="video_area">
+    <video id="show_video" class="video-js vjs-default-skin" controls
+      preload="auto" width="640" height="360" data-setup="{}">
+      <source src="<%= @video.video_file_url %>" type='video/mp4'>
+    </video>
+  </section><!-- video_area -->
 
-  <h4 class="video_item_label">Mentioned App:</h4>
-  <% if @video.app_thumbnail? %>
-  	<%= image_tag @video.app_thumbnail.to_s %>
-  <% end %>
-  <p><%= link_to @video.app_url, @video.app_url %></p>
+  <div class="video_meta">
+    <p><%= @video.details %></p>
+    <h4 class="video_item_label">Retina Thumbnail:</h4><p><%= @retina %></p>
+    <h4 class="video_item_label">Mentioned App:</h4>
+    <% if @video.app_thumbnail? %>
+    	<%= image_tag @video.app_thumbnail.to_s %>
+    <% end %>
+    <p><%= link_to @video.app_url, @video.app_url, :target => "_blank" %></p>
+  </div><!-- video_meta -->
+
+</section><!-- video_block -->
+
+
+
+<div id="edit_controls">
+    <%= link_to 'Edit', edit_video_path(@video) %> |
+    <%= link_to 'Back', videos_path %>
 </div>
-<section id="video_area">
-  <video id="show_video" class="video-js vjs-default-skin" controls
-    preload="auto" width="640" height="360" data-setup="{}">
-    <source src="<%= @video.video_file_url %>" type='video/mp4'>
-  </video>
-</section>
 
-
-</section>
-
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<%= debug @video %>

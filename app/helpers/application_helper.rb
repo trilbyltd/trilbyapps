@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 def logo
-	image_tag("logo@2x.png", :alt => "Trilby Logo", :width => "300px")
+	image_tag("logo@2x_transparency.png", :alt => "Trilby Logo")
 end
 
 def select_tag_for_filter(model, nvpairs, params)

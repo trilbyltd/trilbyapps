@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>TrilbyApps</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
-  <script src="http://vjs.zencdn.net/c/video.js"></script>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<div id="header-line"></div>
-	<header id="header">
-		<%= render 'layouts/header' %>
-	</header>
+<%= render 'layouts/header' %>
 	
-	<div id="workspace">
-		<%= yield %>
-	</div><!-- workspace -->
+<div id="content">
+	<%= yield %>
+</div><!-- workspace -->
 
-
-	<footer id="footer">
-		<%= render 'layouts/footer' %>
-	</footer>
-
-</body>
-</html>
+<%= render 'layouts/footer' %>

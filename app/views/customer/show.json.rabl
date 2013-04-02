@@ -1,3 +1,0 @@
-object @customer
-
-attributes :name

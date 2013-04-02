@@ -1,4 +1,4 @@
-<h1>Listing resellers</h1>
+<h1>Resellers</h1>
 <div id="resellers" data-resellers="<%= render(template: "resellers/index.json.rabl") %>">
 <p id="notice"><%= notice %></p>
 
@@ -7,7 +7,10 @@
     <th>Name</th>
     <th></th>
   </tr>
-
+  <tr>
+  	<td><%= link_to "Add Reseller", new_reseller_path %></td>
+  	<td></td>
+  </tr>
 <% @resellers.each do |reseller| %>
   <tr>
     <td><%= link_to reseller.name, edit_reseller_path(reseller) %></td>
@@ -15,9 +18,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Reseller', new_reseller_path %>
-<br>
-<%= link_to '< Back', root_path %>

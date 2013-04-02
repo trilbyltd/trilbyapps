@@ -1,5 +1,3 @@
-<h2>Courses</h2>
-
 <h2>Intro</h2>
 <% @courses.intro.each do |course| %>
 	<p class="courses_list"><%= link_to course.title, course %>&nbsp;<span class="edit_course"><%= link_to 'Edit', edit_course_path(course) %></span></p>

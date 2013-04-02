@@ -1,9 +1,7 @@
-<h1>Listing bookings</h1>
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Booking', new_booking_path %>
-
-<h2>All Bookings</h2>
+<%= link_to 'New Booking', new_booking_path %> &nbsp;
+<%= link_to "Bookings Archive &larr;", bookings_archive_path %>
 <table class="booking_index">
   <tr class="booking_header_row">
     <th>Training date</th>
@@ -16,7 +14,7 @@
     <th class="booking_invoice_sent">Invoice sent</th>
   </tr>
 <tr class "section_title">
-    <td>All</td>
+    <td><p>All</p></td>
 </tr>
 <% @bookings.not_invoice_ready.each do |booking| %>
   <tr>
@@ -87,5 +85,3 @@
 
 </tr>
 </table>
-<br>
-<%= link_to "Bookings Archive", bookings_archive_path %>

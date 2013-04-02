@@ -4,13 +4,14 @@
 
 #courses_form_view {
 	float:left;
-	width:750px;
+	width:960px;
 	background-color: lightblue;
 	margin:15px;
 	padding:0 0 0 3px;
 }
 #courses_form_labels {
 	width:300px;
+	margin:5px;
 }
 #courses_form_fields {
 	float:left;
@@ -26,32 +27,32 @@ p#courses_form_labels {
 	margin-top:5px;
 	margin-bottom:5px;
 }
-.title, #course_title textarea {
-	height:0px;
+p.title, label.title {
+	height:28px;
 }
-p#course_audience textarea {
+p.audience , label.audience {
 	height:60px;
 }
-.description, #course_description, #course_description textarea {
+p.description, label.description {
 	height:100px;
 }
-.outcomes, #course_outcomes textarea {
+p.outcomes, label.outcomes {
 	height:100px;
 }
-.equipment, .equipment textarea {
-	height:100px;
+p.equipment, label.equipment {
+	height:1028px;
 }
-.endcost, #course_endcost {
-	height: 30px;
+p.endcost, label.endcost {
+	height: 328px;
 }
-.contractcost, #course_contractcost{
-	height: 30px;
+p.contractcost, label.contractcost {
+	height: 328px;
 }
-.location, #course_location {
-	height: 30px;
+p.location, label.location {
+	height: 328px;
 }
-.category, #course_category {
-	height: 30px;
+p.category, label.category {
+	height: 328px;
 }
 .edit_course a  {
 	font-size:8pt;

@@ -18,8 +18,8 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       if @video.save
-        format.html { redirect_to videos_url, notice: 'New video successfully created.' }
-        format.json { render json: @video, status: :created, location: @video }
+          format.html { redirect_to videos_url, notice: 'New video successfully created.' }
+          format.json { render json: @video, status: :created, location: @video }
       else
         format.html { render action: "new" }
         format.json { render json: @video.errors, status: :unprocessable_entity }
@@ -45,17 +45,22 @@ class VideosController < ApplicationController
     
     respond_to do |format|
       if @video.update_attributes(params[:video])
-        format.html { redirect_to videos_url, notice: 'Video successfully updated.' }
+        format.html { redirect_to @video, notice: 'Video successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @video.errors, status: :unprocessable_entity }
       end
     end
- end
+  end
   
   def destroy
     @video = Video.find(params[:id])
   end  
   
+
+  private
+  def get_app_icon_url
+    
+  end
 end
