@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Courses Index
+a.title {
+	width:auto;
+}
+.courses_list {
+	margin: 10px 3px;
+	width:auto;
+}
+//  Courses form
 #courses_form_view {
 	float:left;
 	width:960px;
@@ -30,6 +39,9 @@ p#courses_form_labels {
 p.title, label.title {
 	height:28px;
 }
+p.status, label.status {
+	height:28px;
+}
 p.audience , label.audience {
 	height:60px;
 }
@@ -40,19 +52,22 @@ p.outcomes, label.outcomes {
 	height:100px;
 }
 p.equipment, label.equipment {
-	height:1028px;
+	height:128px;
 }
 p.endcost, label.endcost {
-	height: 328px;
+	height: 38px;
 }
 p.contractcost, label.contractcost {
-	height: 328px;
+	height: 38px;
 }
 p.location, label.location {
-	height: 328px;
+	height: 38px;
+}
+p.length, label.length {
+	height: 38px;
 }
 p.category, label.category {
-	height: 328px;
+	height: 38px;
 }
 .edit_course a  {
 	font-size:8pt;
@@ -61,12 +76,7 @@ p.category, label.category {
 
 // Show HTML Formats
 p.cost_course_fields{
-	margin:10px;
-	padding:10px 15px;
-	background-color: #ccd;
-	border:1px solid #000;
-	width:85px;
-	height:40px;
+	height:28px;
 }
 // Web/App Formatting
 #web_course_view  {
@@ -78,7 +88,6 @@ p.cost_course_fields{
 	font-family:helvetica;
 	font-size: 16px;
 	color: #000;
-	background-color: #FFF;
 	margin: 5px;
 	padding: 0px;
 }
@@ -93,7 +102,7 @@ p.cost_course_fields{
 #web_course_view h3 {
 	font-size: 21px;
 	font-weight: bold;
-	margin: 0px;
+	margin: 5px 0 5px 0;
 	padding: 0px;
 	margin-bottom: 10px;
 	margin-top: 2px;
@@ -105,22 +114,38 @@ p.cost_course_fields{
 	margin-top: 2px;
 	font-size: 16px;
 }
-#web_course_view ul {
+#web_course_view ul, #web_course_view li {
 	margin: 0px;
 	padding: 0px;
 	margin-bottom: 20px;
 	margin-top: 2px;
-}
-#web_course_view li{
-	margin: 0px;
-	padding: 0px;
-	margin-bottom: 10px;
-	margin-top: 2px;
-	list-style-type: disc;
+	margin-left:15px;
 	list-style-position: outside;
-	margin-left: 20px;
 }
+// #web_course_view li{
+// 	margin: 0px;
+// 	padding: 0px;
+// 	margin-bottom: 10px;
+// 	margin-top: 2px;
+// 	list-style-type: disc;
+// 	list-style-position: outside;
+// 	margin-left: 20px;
+// }
 .updated {
 	font-size: 10px;
 	font-style: italic;
+}
+.draft {
+	font-size :8pt;
+	border: 1px solid #000;
+	padding:2px;
+	width:40px;
+	float:none;
+}
+.not_draft {
+	font-size :8pt;
+	border: 1px solid #000;
+	padding:2px;
+	width:40px;
+	float:none;
 }

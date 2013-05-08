@@ -29,11 +29,10 @@ class VideosController < ApplicationController
   
   def show
     @video = Video.find(params[:id])
-
+    
     if @video.retinathumbnail?
       @retina = "Image Uploaded"
     end
-
   end
 
   def edit
@@ -45,7 +44,7 @@ class VideosController < ApplicationController
     
     respond_to do |format|
       if @video.update_attributes(params[:video])
-        format.html { redirect_to @video, notice: 'Video successfully updated.' }
+        format.html { redirect_to videos_url, notice: 'Video successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

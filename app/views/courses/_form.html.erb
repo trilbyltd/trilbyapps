@@ -12,6 +12,7 @@
 <div class="form_view" id="courses_form_view">
   <div class="form_labels" id="courses_form_labels">
         <p><%= f.label :title, :class => [:form_label, :title] %><br />
+        <p><%= f.label :status, :class => [:form_label, :status] %><br />
         <p><%= f.label :audience, :class => [:audience, :form_label] %><br />
         <p><%= f.label :description, :class => [:description, :form_label] %><br />
         <p><%= f.label :learning_outcomes, :class => [:outcomes, :form_label] %><br />
@@ -26,20 +27,22 @@
 
   <div class="form_fields" id="courses_form_fields">
     <p class="title"><%= f.text_field :title %>
+    <p class="status"><%= f.check_box :status %>
     <p class="audience"><%= f.text_area :audience %>
     <p class="description"><%= f.text_area :description, :class => [:field_description, :description, :textarea] %>
     <p class="outcomes"><%= f.text_area :learning_outcomes,:class => [:field_description, :outcomes, :textarea], :placeholder => 'You can use HTML here' %>
     <p class="equipment"><%= f.text_area :equipment, :class => "field_equipment textarea" %>
-    <p class="endcost">£<%= f.text_field :enduser_cost %>
-    <p class="contractcost">£<%= f.text_field :contract_cost %>
+    <p class="endcost"><%= f.text_field :enduser_cost %>
+    <p class="contractcost"><%= f.text_field :contract_cost %>
     <p class="location"><%= f.select :location, options_for_select(%w[On\ Site Training\ Centre]) %>
-    <p class="length">£<%= f.text_field :length %>
-    <p class="category"><%= f.select :category, options_for_select(%w[Intro Creative Technology APD]) %>
+    <p class="length"><%= f.text_field :length %>
+    <p class="category"><%= f.select :category, options_for_select(%w[Intro Creative Technology APD Reseller]) %>
     <p class="thumbnail"><%= f.file_field :thumbnail %>
+  </div><!-- form_fields -->
     <div class="actions">
       <%= f.submit %>
     </div>
-  </div><!-- form_fields -->
+  
     
 </div><!-- form_view -->
 
