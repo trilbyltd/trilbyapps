@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  domain_name: MyString
+  hosting_package: MyString
+  domain_name: false
+  email: MyString
+  customer_id: 1
+  contact_name: MyString
+  contact_email: MyString
+  additonal_domains: MyText
+  notes: MyText
+
+two:
+  domain_name: MyString
+  hosting_package: MyString
+  domain_name: false
+  email: MyString
+  customer_id: 1
+  contact_name: MyString
+  contact_email: MyString
+  additonal_domains: MyText
+  notes: MyText
