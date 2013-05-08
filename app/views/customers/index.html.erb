@@ -3,15 +3,13 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
   </tr>
   <tr>
   	<td><%= link_to "Add Customer", new_customer_path %></td>
-  	<td></td>
+
 <% @customers.each do |customer| %>
   <tr>
-    <td><%= link_to customer.name, edit_customer_path(custoner) %></td>
-    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to customer.name, edit_customer_path(customer) %></td>
   </tr>
 <% end %>
 </table>

@@ -12,7 +12,6 @@ end
 
 def new
 	@customer = Customer.new
-
 end
 
 def edit
@@ -21,7 +20,7 @@ def edit
 end
 
 def create
-	@customer = Customer.new(params[:cusotomer])
+	@customer = Customer.new(params[:customer])
 
 	respond_to do |format|
 		if @customer.save
