@@ -27,8 +27,10 @@
 	<p class="updated">Last Updated: <%= @hosting.updated_at.strftime("%B %Y") %></p>
 </div><!-- web_course_view -->
 
+<%= render :partial => 'hosting_renewals/renewals' %>
+
 <div id="edit_controls">
-        <%= link_to 'Edit', edit_hosting_path(@hosting) %> |
+    <%= link_to 'Edit', edit_hosting_path(@hosting) %> |
     <%= link_to 'Destroy', @hosting, method: :delete, data: { confirm: 'Are you sure you want to delete this domain registration record?' } %> |
     <%= link_to 'Back', hostings_path %>
 </div>

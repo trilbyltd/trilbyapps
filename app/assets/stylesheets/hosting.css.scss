@@ -21,22 +21,22 @@
 	width:33.33%;
 	float:left;
 	margin:4px 0;
-}
-
-.hosting_list_item a{
+	a{
 	margin:auto;
 	text-align: left;
 	font-weight: 600;
-}
-.hosting_list_item a:hover {
-	background-color:lightgrey;
-}
-.hosting_list_item p {
+		&:hover {
+			background-color:lightgrey;
+		}
+	}
+	p {
 	margin-top: 4px ;
 	text-align: left;
 	padding:4px;
 	// height:100px;
+	}
 }
+
 .new_hosting_list_item {
 	border:solid 1px #000;
 	height:330px;

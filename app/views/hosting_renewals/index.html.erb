@@ -6,13 +6,11 @@
 			<div class="hosting_header_item">Contact Name</div>
 			<div class="hosting_header_item">$customer_company</div>
 		</div>	
-	<% if @hostings.present? %>
-	<% @hostings.each do |hosting| %>
+	<% @hostings.all.each do |hosting| %>
 		<div class="hostings_list_item">
 			<div class="hosting_list_item"><%= link_to hosting.domain_name, hosting %></div>
 			<div class="hosting_list_item"><%= hosting.contact_name %></div>
 			<div class="hosting_list_item">$customer_company</div>
 		</div>
-	<% end %>
 	<% end %>
 </div>

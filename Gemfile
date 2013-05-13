@@ -11,7 +11,7 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'table_builder'#, :git => 'git://github.com/p8/table_builder.git'
 gem 'rabl' # for custom JSON
 gem 'oj'
-
+gem 'bootstrap-sass', '2.3.1.0'
 # File Uploads
 gem 'carrierwave'
 # gem 'rmagick'

@@ -1,0 +1,15 @@
+<p><%= link_to "Add New Domain Record", new_hosting_path %></p>
+<table id="hosting_renewals_list">
+		<th id="hosting_renewals_list_header">
+			<td class="hosting_renewals_header_item">Renewal Date</td>
+			<td class="hosting_renewals_header_item">Invoice Sent</td>
+			<td class="hosting_renewals_header_item">Paid</td>
+		</th>	
+	<% @hosting_renewals.renewals do |hosting_renewal| %>
+		<tr class="hostings_list_item">
+			<td class="hosting_list_item"><%= hosting_renewal.renewal_date %></td>
+			<td class="hosting_list_item"><%= hosting_renewal.invoice_sent %></td>
+			<td class="hosting_list_item"><%= hosting_renewal.paid %></td>
+		</tf>
+	<% end %>
+</table>
