@@ -4,13 +4,15 @@ Trilbyapps::Application.routes.draw do
   match 'bookings/calendar' => 'bookings#calendar'
   
   resources :home
+  resources :customers
+  resources :resellers
   resources :bookings
   resources :courses
-  resources :resellers
+  resources :hostings
+  resources :renewals
   resources :hostings do
-    resources :hosting_renewals
+    resources :renewals
   end
-  resources :customers
   resources :videos
   
   root :to => "home#index"

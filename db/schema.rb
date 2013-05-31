@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512204314) do
+ActiveRecord::Schema.define(:version => 20130531091007) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "reseller_id"
@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(:version => 20130512204314) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "hosting_renewals", :force => true do |t|
-    t.date     "renewal_date"
-    t.date     "invoice_sent"
-    t.boolean  "paid"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "hosting_id"
-  end
-
   create_table "hostings", :force => true do |t|
     t.string   "domain_name",         :null => false
     t.string   "hosting_package",     :null => false
@@ -76,6 +67,15 @@ ActiveRecord::Schema.define(:version => 20130512204314) do
     t.text     "notes"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "renewals", :force => true do |t|
+    t.date     "renewal_date"
+    t.date     "invoice_sent"
+    t.boolean  "paid"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "hosting_id"
   end
 
   create_table "resellers", :force => true do |t|

@@ -1,9 +1,9 @@
-<%= form_for(@hosting) do |f| %>
-  <% if @hosting.errors.any? %>
+<%= form_for(@new_host) do |host| %>
+  <% if @new_host.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@hosting.errors.count, "error") %> prohibited this course from being saved:</h2>
+      <h2><%= pluralize(@new_host.errors.count, "error") %> prohibited this course from being saved:</h2>
       <ul>
-      <% @hosting.errors.full_messages.each do |msg| %>
+      <%= @new_host.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -12,27 +12,27 @@
 
 <div class="form_view" id="hosting_form_view">
   <div class="form_labels" id="hosting_form_labels">
-        <p><%= f.label :domain_name, :class => :form_label %><br />
-        <p><%= f.label :hosting_package, :class => :form_label %><br />
-        <p><%= f.label :domain_registration, :class => :form_label %><br />
-        <p><%= f.label :email, :class => :form_label %><br />
-        <p><%= f.collection_select(:customer_id, Customer.all, :id, :customer_name ) %><br />
-        <p><%= f.label :contact_name, :class => :form_label %><br />
-        <p><%= f.label :contact_email, :class => :form_label %><br />
-        <p><%= f.label :additional_domains, :class => :form_label %><br />
-        <p><%= f.label :notes, :class => :form_label %><br />
+        <p><%= host.label :domain_name, :class => :form_label %><br />
+        <p><%= host.label :hosting_package, :class => :form_label %><br />
+        <p><%= host.label :domain_registration, :class => :form_label %><br />
+        <p><%= host.label :email, :class => :form_label %><br />
+        <p><%= host.collection_select(:customer_id, Customer.all, :id, :customer_name ) %><br />
+        <p><%= host.label :contact_name, :class => :form_label %><br />
+        <p><%= host.label :contact_email, :class => :form_label %><br />
+        <p><%= host.label :additional_domains, :class => :form_label %><br />
+        <p><%= host.label :notes, :class => :form_label %><br />
   </div><!-- form_labels -->
 
   <div class="form_fields" id="hosting_form_fields">
-    <p class=""><%= f.text_field :domain_name %><br>
-    <p class=""><%= f.text_field :hosting_package %><br>
-    <p class=""><%= f.check_box :domain_registration %><br>
-    <p class=""><%= f.check_box :email %><br>
-    <p class=""><%= f.number_field :customer_id %><br>
-    <p class=""><%= f.text_field :contact_name %><br>
-    <p class=""><%= f.text_field :contact_email %><br>
-    <p class=""><%= f.text_area :additional_domains %><br>
-    <p class=""><%= f.text_area :notes %><br>
+    <p class=""><%= host.text_field :domain_name %><br>
+    <p class=""><%= host.text_field :hosting_package %><br>
+    <p class=""><%= host.check_box :domain_registration %><br>
+    <p class=""><%= host.check_box :email %><br>
+    <p class=""><%= host.number_field :customer_id %><br>
+    <p class=""><%= host.text_field :contact_name %><br>
+    <p class=""><%= host.text_field :contact_email %><br>
+    <p class=""><%= host.text_area :additional_domains %><br>
+    <p class=""><%= host.text_area :notes %><br>
   </div><!-- form_fields -->
     <div class="actions">
       <%= f.submit %>

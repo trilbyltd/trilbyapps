@@ -1,5 +1,5 @@
 <h2>Active Domains</h2>
-<p><%= link_to "Add New Domain Record", new_hosting_path %></p>
+<p><%= link_to "Add New Domain Renewal Record", new_hosting_hosting_renewal_path(@hosting) %></p>
 <div id="hosting_list">
 		<div id="hosting_list_header">
 			<div class="hosting_header_item">Domain Name</div>
@@ -8,7 +8,7 @@
 		</div>	
 	<% @hostings.all.each do |hosting| %>
 		<div class="hostings_list_item">
-			<div class="hosting_list_item"><%= link_to hosting.domain_name, hosting %></div>
+			<div class="hosting_list_item"><%= link_to hosting.domain_name, hosting_hosting_renewal_path(@hosting, hosting_renewal) %></div>
 			<div class="hosting_list_item"><%= hosting.contact_name %></div>
 			<div class="hosting_list_item">$customer_company</div>
 		</div>

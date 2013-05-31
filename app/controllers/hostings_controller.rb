@@ -11,7 +11,8 @@ class HostingsController < ApplicationController
 
   def show
     @hosting = Hosting.find(params[:id])
-
+    @renewals = @hosting.renewals
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @hosting }
@@ -19,11 +20,11 @@ class HostingsController < ApplicationController
   end
   
   def new
-    @hosting = Hosting.new
-
+    @new_host = Hosting.new
+    
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @hosting }
+      format.json { render json: @new_host }
     end
   end
 

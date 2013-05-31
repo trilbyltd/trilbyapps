@@ -13,8 +13,8 @@
     <th class="booking_confirmed">Training confirmed</th>    
     <th class="booking_invoice_sent">Invoice sent</th>
   </tr>
-<tr class "section_title">
-    <td><p>All</p></td>
+<tr class="section_title">
+    <td colspan="8"><p>All</p></td>
 </tr>
 <% @bookings.not_invoice_ready.each do |booking| %>
   <tr>
@@ -49,7 +49,7 @@
 <% end %>
 
 <tr>
-    <td>Ready to Invoice</td>
+    <td colspan="8">Ready to Invoice</td>
 </tr>
 <% @bookings.invoice_ready.not_sent.each do |booking| %>
   <tr>
