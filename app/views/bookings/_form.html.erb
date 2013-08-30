@@ -2,7 +2,6 @@
   <% if @booking.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
-
       <ul>
       <% @booking.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,6 +9,7 @@
       </ul>
     </div>
   <% end %>
+  
 <div id="booking_form_view">
   <div class="form_labels" id="booking_form_labels">
         <p><%= f.label :training_date %><br />

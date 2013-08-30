@@ -1,0 +1,42 @@
+<%= form_for(@domain) do |f| %>
+  <% if @domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@domain.errors.count, "error") %> prohibited this course from being saved:</h2>
+      <ul>
+      <% @domain.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form_view" id="domain_form_view">
+    <div class="form_labels" id="domain_form_labels">
+        <p><%= f.label :domain_name, :class => :form_label %><br />
+        <p><%= f.label :hosting_package, :class => :form_label %><br />
+        <p><%= f.label :domain_registration, :class => :form_label %><br />
+        <p><%= f.label :email, :class => :form_label %><br />
+        <p><%= f.label "Customer", :class => :form_label %><br />
+        <p><%= f.label :contact_name, :class => :form_label %><br />
+        <p><%= f.label :contact_email, :class => :form_label %><br />
+        <p><%= f.label :additional_domains, :class => :form_label %><br />
+        <p><%= f.label :notes, :class => :form_label %><br />
+    </div><!-- form_labels -->
+
+    <div class="form_fields" id="domain_form_fields">
+      <p class=""><%= f.text_field :domain_name %><br>
+      <p class=""><%= f.text_field :hosting_package %><br>
+      <p class=""><%= f.check_box :domain_registration %><br>
+      <p class=""><%= f.check_box :email %><br>
+      <p class=""><%= f.collection_select(:customer_id, Customer.all, :id, :customer_name ) %><br />
+      <p class=""><%= f.text_field :contact_name %><br>
+      <p class=""><%= f.text_field :contact_email %><br>
+      <p class=""><%= f.text_area :additional_domains %><br>
+      <p class=""><%= f.text_area :notes %><br>
+    </div><!-- form_fields -->
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    
+  </div><!-- form_view -->
+<% end %>

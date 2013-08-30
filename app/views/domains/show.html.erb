@@ -1,0 +1,38 @@
+<div id="domain_view">
+	<h2>Domain Record for <%= @domain.domain_name %></h2>
+	
+	<div>
+		<div>
+			<p>Customer</p>
+			<p>Contact Name</p>
+			<p>Contact Email</p>
+			<p>Hosting Package</p>
+			<p>Domain Registration?</p>
+			<p>Email?</p>
+			<p>Additional Domains</p>
+			<p>Notes</p>
+		</div>
+		<div>
+			<p><%= @domain.customer_id %></p>
+			<p><%= @domain.contact_name %></p>
+			<p><%= @domain.contact_email %></p>
+			<p><%= @domain.hosting_package %></p>
+			<p><%= @domain.domain_registration %></p>
+			<p><%= @domain.email %></p>
+			<p><%= @domain.additional_domains %></p>
+			<p><%= @domain.notes %></p>
+		</div>
+
+
+	<p class="updated">Last Updated: <%= @domain.updated_at.strftime("%B %Y") %></p>
+</div><!-- web_course_view -->
+
+<%= render :partial => 'hosting_renewals/renewals' %>
+
+<div id="edit_controls">
+    <%= link_to 'Edit', edit_domain_path(@domain) %> |
+    <%= link_to 'Destroy', @domain, method: :delete, data: { confirm: 'Are you sure you want to delete this domain registration record?' } %> |
+    <%= link_to 'Back', domains_path %>
+</div>
+
+<%= debug @domain %>

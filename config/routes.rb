@@ -8,9 +8,9 @@ Trilbyapps::Application.routes.draw do
   resources :resellers
   resources :bookings
   resources :courses
-  resources :hostings
   resources :renewals
-  resources :hostings do
+  resources :domains
+  resources :domains do
     resources :renewals
   end
   resources :videos

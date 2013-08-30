@@ -1,0 +1,18 @@
+<h2>Active Domains</h2>
+<p><%= link_to "Add New Domain Record", new_domain_path %></p>
+<div id="domain_list">
+		<div id="domain_list_header">
+			<div class="domain_header_item">Domain Name</div>
+			<div class="domain_header_item">Contact Name</div>
+			<div class="domain_header_item">$customer_company</div>
+		</div>	
+	<% if @domains.present? %>
+	<% @domains.each do |domain| %>
+		<div class="domains_list_item">
+			<div class="domain_list_item"><%= link_to domain.domain_name, domain %></div>
+			<div class="domain_list_item"><%= domain.contact_name %></div>
+			<div class="domain_list_item">$customer_company</div>
+		</div>
+	<% end %>
+	<% end %>
+</div>

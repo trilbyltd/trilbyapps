@@ -1,4 +1,4 @@
-<%= form_for([@hosting, @hosting_renewal]) do |f| %>
+<%= form_for([@domain, @hosting_renewal]) do |f| %>
   <% if @hosting_renewal.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@hosting_renewal.errors.count, "error") %> prohibited this course from being saved:</h2>
@@ -10,14 +10,14 @@
     </div>
   <% end %>
 
-<div class="form_view" id="hosting_form_view">
-  <div class="form_labels" id="hosting_form_labels">
+<div class="form_view" id="domain_form_view">
+  <div class="form_labels" id="domain_form_labels">
         <p><%= f.label :renewal_date, :class => :form_label %><br />
         <p><%= f.label :invoice_date, :class => :form_label %><br />
         <p><%= f.label :paid, :class => :form_label %><br />
   </div><!-- form_labels -->
 
-  <div class="form_fields" id="hosting_form_fields">
+  <div class="form_fields" id="domain_form_fields">
     <p class=""><%= f.text_field :renewal_date %><br>
     <p class=""><%= f.text_field :invoice_sent %><br>
     <p class=""><%= f.check_box :paid %><br>

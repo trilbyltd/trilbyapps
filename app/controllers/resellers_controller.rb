@@ -1,6 +1,4 @@
 class ResellersController < ApplicationController
-  # GET /resellers
-  # GET /resellers.json
 
 respond_to :json
 
