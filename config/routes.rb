@@ -1,22 +1,19 @@
 Trilbyapps::Application.routes.draw do
 
-  match 'bookings/archive' => 'bookings#archive'
-  match 'bookings/calendar' => 'bookings#calendar'
-  
+  get 'bookings/archive' => 'bookings#archive'
+  # match 'bookings/calendar' => 'bookings#calendar'
+
   resources :home
   resources :customers
   resources :resellers
   resources :bookings
-  resources :courses
   resources :renewals
   resources :domains
   resources :domains do
     resources :renewals
   end
-  resources :videos
-  
   root :to => "home#index"
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -15,11 +15,10 @@
 //= require_tree .
 
 $(function(){
-$('.datepicker').datepicker({dateFormat: "dd M yy"});
-//  $('.textarea').autoResize();
-$('.reseller_list .twitter-typeahead').typeahead({
-	name: 'resellers',
-	remote: 'http://trilbyapps.dev/resellers.json'
-});
-
+	$('.datepicker').datepicker.formatDate("dd M yy", new Date (ISO_8601) );
+	});
+	$('.reseller_list .twitter-typeahead').typeahead({
+		name: 'resellers',
+		remote: 'http://trilbyapps.dev/resellers.json'
+	});
 });

@@ -11,14 +11,14 @@ class DomainsController < ApplicationController
 
   def show
     @domain = Domain.find(params[:id])
-    @renewals = @domain.renewals
-    
+    @renewals = Renewal.where(:hosting_id => @domain.id)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @domain }
     end
   end
-  
+
   def new
     @domain = Domain.new
     @renewal = @domain.renewal.new

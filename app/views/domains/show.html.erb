@@ -1,6 +1,6 @@
 <div id="domain_view">
 	<h2>Domain Record for <%= @domain.domain_name %></h2>
-	
+
 	<div>
 		<div>
 			<p>Customer</p>
@@ -27,7 +27,22 @@
 	<p class="updated">Last Updated: <%= @domain.updated_at.strftime("%B %Y") %></p>
 </div><!-- web_course_view -->
 
-<%= render :partial => 'hosting_renewals/renewals' %>
+<h3>Renewals</h3>
+<div>
+	<table>
+		<th>Renewal Date</th>
+		<th>Invoice Sent</th>
+		<th>Paid?</th>
+	<% @renewals.each do |renewal| %>
+	<tr>
+		<td><%= renewal.renewal_date %></td>
+		<td><%= renewal.invoice_sent %></td>
+		<td><%= renewal.paid %></td>
+	</tr>
+	<% end %>
+	<%= link_to 'New Renewal', new_domain_renewal_path(@domain) %>
+	</table>
+</div>
 
 <div id="edit_controls">
     <%= link_to 'Edit', edit_domain_path(@domain) %> |
@@ -36,3 +51,4 @@
 </div>
 
 <%= debug @domain %>
+<%= debug @renewals %>

@@ -6,3 +6,31 @@ body {
 	font-family: Helvetica, Arial;
 	font-size: 18pt;
 }
+.app-list-item {
+		margin: 2px;
+		text-align: left;
+		width: 30%;
+		// min-height:120px;
+		// max-height:126px;
+		// min-width:86px;
+		// max-width:90px;
+		float:left;
+	}
+.app-list-item p {}
+img.icons {
+	margin: 3px;
+    -webkit-border-radius: 12px;
+    border-radius:12px;
+    -moz-border-radius: 12px;
+    display:block;
+    }
+.app-name {text-align: center;}
+
+.tweets {
+    display:block;
+}
+.tweet {
+    font-size:12px
+}
+.well {
+}

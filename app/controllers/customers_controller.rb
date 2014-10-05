@@ -20,7 +20,7 @@ def edit
 end
 
 def create
-	@customer = Customer.new(params[:customer])
+	@customer = Customer.new(params[:customer_params])
 
 	respond_to do |format|
 		if @customer.save
@@ -45,6 +45,11 @@ end
 def destroy
 	@customer = Customer.find(params[:id])
 
+end
+
+private
+def customer_params
+  params.require[:customer].permit(:name)
 end
 
 end

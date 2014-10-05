@@ -18,3 +18,4 @@
 
 config/initializers/local_token.rb
 /public/uploads
+.powenv

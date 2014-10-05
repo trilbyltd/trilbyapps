@@ -1,5 +1,4 @@
 class Booking < ActiveRecord::Base
-  attr_accessible :contact_email, :contact_name, :customer_id, :invoice_sent, :length, :purchase_order, :quote_id, :reseller_id, :training_approved, :training_confirmed, :training_date, :training_type
   validates :training_date, :training_type, :contact_name, :presence => true
 
   #belongs_to :reseller
@@ -10,15 +9,14 @@ class Booking < ActiveRecord::Base
   #  create_reseller(:name => new_reseller_name) unless new_reseller_name.blank?
   end
 
-
   # Scopes for Index page
   scope :all, order("training_date ASC")
-  scope :approved,                :conditions => { :training_approved => true }
-  scope :not_approved,            :conditions => { :training_approved => false }
-  scope :invoice_ready,           lambda { where("training_date < ?", Time.zone.now)}
-  scope :not_invoice_ready,       lambda { where("training_date > ?", Time.zone.now)}
-  scope :not_sent,                    :conditions => { :invoice_sent => false }
-  scope :not_confirmed,           :conditions => { :training_confirmed => false }
+  scope :approved, -> { where(:training_approved => true) }
+  scope :not_approved, -> { where(:training_approved => false) }
+  scope :invoice_ready, -> { where("training_date <= ?", Time.zone.now) }
+  scope :not_invoice_ready, -> { where("training_date > ?", Time.zone.now) }
+  scope :not_sent, -> { where(:invoice_sent => false) }
+  scope :not_confirmed, :conditions => { :training_confirmed => false }
 
 FILTERS = [
   {:scope => "all",           :label => "All"},
@@ -43,6 +41,5 @@ FILTERS = [
     # booking.add_comment("AF83 - Shake your digital, we do WowWare")
     booking
   end
-
 
 end

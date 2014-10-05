@@ -1,12 +1,12 @@
 class RenewalsController < ApplicationController
 
-  before_filter :load_hosting
-  
+  before_filter :load_domain
+
   def index
     # @hostings = Hosting.find(params[:hosting_id])
     @renewals = Renewal.all
     @domains = @domain.renewals.all
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json #{ render json: @resellers }
@@ -21,9 +21,9 @@ class RenewalsController < ApplicationController
       format.json { render json: @domain_renewal }
     end
   end
-  
+
   def new
-    @domain_renewal = @domain.domain_renewals.new
+    @domain_renewal = @domain.renewals.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -75,7 +75,7 @@ class RenewalsController < ApplicationController
 
   private
   def load_domain
-    @domain = Domain.find(params[:hosting_id])  
+    @domain = Domain.where(:hosting_id => :id)
   end
-  
+
 end

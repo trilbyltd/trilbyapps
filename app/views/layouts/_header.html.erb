@@ -9,19 +9,21 @@
   <!-- Import Stylesheets and scripts -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- <script src="jquery.tweetspan/jquery.tweetspan.min.js"></script> -->
   <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
   <script src="http://vjs.zencdn.net/c/video.js"></script>
   <%= csrf_meta_tags %>
 
 </head>
-
 <body>
 	<!-- <div id="header-line"></div> -->
 <div id="top">
 	<div id="header">
 		<div id="header_nav">
 			<div id="logo">
-				<%= link_to logo , root_path %>
+				<%= link_to logo, root_path %>
 			</div>
 			<ul id="nav">
 				<!-- <li><%= link_to "Home", root_path %></li> -->
@@ -29,9 +31,7 @@
 				<li><%= link_to "Resellers", resellers_path %></li>
 				<li><%= link_to "Customers", customers_path %></li>
 				<li><%= link_to "Domains", domains_path %></li>
-				<li><%= link_to "Courses", courses_path %></li>
-				<li><%= link_to "Videos", videos_path %></li>
-			</ul>  
+			</ul>
 		</div>
 	</div>
 </div>

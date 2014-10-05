@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.training_confirmed = false
     @booking.invoice_sent = false
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @booking }
@@ -55,8 +55,8 @@ class BookingsController < ApplicationController
 
 
   def create
-    @booking = Booking.new(params[:booking])
-    
+    @booking = Booking.new(params[:booking_params])
+
     respond_to do |format|
       if @booking.save
         format.html { redirect_to bookings_url, notice: 'Booking was successfully created.' }
@@ -72,7 +72,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     respond_to do |format|
-      if @booking.update_attributes(params[:booking])
+      if @booking.update_attributes(params[:booking_params])
         format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
         format.json { head :no_content }
       else
@@ -92,5 +92,8 @@ class BookingsController < ApplicationController
     end
   end
 
-
+private
+  def booking_params
+    params.require(:booking).permit(:contact_email, :contact_name, :customer_id, :invoice_sent, :length, :purchase_order, :quote_id, :reseller_id, :training_approved, :training_confirmed, :training_date, :training_type)
+  end
 end
